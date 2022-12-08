@@ -1,0 +1,68 @@
+<div class="col-md-8 offset-md-3">
+  <h3>Entrée</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="author">Auteur</label>
+      <input type="text" id="author" class="form-control" [(ngModel)]="movement.author" name="author" name="reference">
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="from">Magasin d'origine</label>
+        <input type="text" class="form-control" placeholder="RAPIDCARGO" disabled="true"
+          [(ngModel)]="movement.warehouse" name="from">
+      </div>
+      <div class="col">
+        <label for="reference">Status Douanier</label>
+        <input type="text" class="form-control" pattern="[A-Za-z]" minlength="1" maxlength="1"
+          [(ngModel)]="movement.customsCode" name="customsCode">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="type">Type</label>
+        <select class="form-select" id="type" [(ngModel)]="movement.type" name="type">
+          <option selected>AAA</option>
+          <option>AWB</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="reference">Référence</label>
+        <input type="text" id="reference" class="form-control" [(ngModel)]="movement.reference" name="reference"
+          name="reference">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Nature de la marchandise</label>
+      <input type="text" id="description" class="form-control" [(ngModel)]="movement.description" name="description"
+        name="description">
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="quantity">Quantité</label>
+        <input type="number" class="form-control" placeholder="10" [(ngModel)]="movement.quantity" name="quantity">
+      </div>
+      <div class="col">
+        <label for="weight">Poids</label>
+        <input type="number" class="form-control" placeholder="10" [(ngModel)]="movement.weight" name="weight">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="totalQuantity">Quantité totale</label>
+        <input type="number" class="form-control" placeholder="10" [(ngModel)]="movement.totalQuantity"
+          name="totalQuantity">
+      </div>
+      <div class="col">
+        <label for="totalWeight">Poids total</label>
+        <input type="number" class="form-control" placeholder="10" [(ngModel)]="movement.totalWeight"
+          name="totalWeight">
+      </div>
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+</div>

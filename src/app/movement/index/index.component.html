@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Horodatage</th>
+      <th scope="col">Type</th>
+      <th scope="col">De</th>
+      <th scope="col">Vers</th>
+      <th scope="col">Référence</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">Poids</th>
+      <th scope="col">Status douanier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movement of movements">
+      <td>{{ movement.createdAt | date:'dd-MM-YYYY HH:mm:ss' }}</td>
+      <td>{{ movement.entry ? "ENTRE" : "SORTIE" }}</td>
+      <td>RAPIDCARGO</td>
+      <td>CARGOINFO</td>
+      <td>{{ movement.type + " " + movement.reference }}</td>
+      <td>{{ movement.quantity}}</td>
+      <td>{{ movement.weight }}</td>
+      <td>{{ movement.customsCode }}</td>
+    </tr>
+  </tbody>
+</table>
